@@ -1,0 +1,232 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    font-size:inherit;
+    font-weight: inherit;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+:root
+{
+    --fontPrimary: 'Poppins', sans-serif;
+
+    --bkg-gradient: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    --bkg-card: #FFF;
+
+    --clr-mainFont: #000;
+    --clr-secFont: rgb(119, 119, 119);
+    
+}  
+
+body
+{
+    font-family: var(--fontPrimary);
+    background-image: var(--bkg-gradient);
+    background-attachment: fixed;
+    padding-bottom:4rem;
+}   
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+    color:var(--clr-secFont);
+    padding:2em;
+}
+
+header a
+{    
+    text-decoration: none;
+    color:var(--clr-secFont);
+    transition: 300ms;
+}
+
+
+footer 
+{
+    padding:3rem;
+
+    text-align: center;
+}
+
+footer p
+{
+    color:var(--clr-secFont);
+    padding-top:1rem;
+    border-top: solid 1px var(--clr-secFont);
+}
+
+
+header a:hover
+{
+    color:var(--clr-mainFont);
+}
+
+header >*
+{
+    display: inline;
+    
+}
+
+nav ul
+{
+    display: inline;
+}
+
+nav li
+{
+    display: inline;
+    margin-left:3rem;
+}
+
+.mainCard
+{
+    width:90%;
+    
+    border-radius: 15px;
+    background-color: var(--bkg-card) ;
+    margin:auto;
+    padding-bottom: 5rem;
+    margin-top:4rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+h1
+{
+    font-size:3.4rem;
+    margin-left:5rem;
+    margin-top:3rem;
+    padding: 2rem;
+}
+
+.portfolioGrid
+{
+    
+    width:95%;
+    display: grid;
+    gap:6rem;
+    margin:auto;
+    margin-top:5rem;
+    text-align: center;
+}
+
+.cardPortfolio img
+{
+    position: relative;
+    visibility: hidden;
+}
+.cardPortfolio
+{
+    border-radius: 20px;
+    background-size:cover;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    transform: scale(1);
+    transition: 200ms;
+}
+
+.cardPortfolio:hover
+{
+    transform: scale(1.03);
+}
+
+#card1
+{
+    background-image: url("/images/Wisdom.png");
+}
+#card2
+{
+  background-image: url("/images/cantoni.png");
+}
+
+@media screen and (max-width: 600px)
+{
+    h1
+    {
+        font-size:2rem;
+        margin-left:1rem;
+        margin-top:0.5rem;
+    }
+    header
+    {
+        flex-direction: column;
+        gap:2rem;
+    }
+    header ul
+    {
+        padding-left:2rem;
+    }
+    header ul li
+    {
+        margin-right:1rem;
+    }
+
+    .mainCard
+    {
+        width:100%;
+    }
+
+}
+
+@media screen and (min-width: 800px)
+{
+    .portfolioGrid
+    {
+        margin:0;
+        margin-top:5em;
+        grid-template-columns: 1fr 1fr ;
+        margin:auto;
+    }
+
+    h1
+    {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+}
