@@ -138,6 +138,11 @@ nav li
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
+.secondCard
+{
+  padding-top:4rem;
+}
+
 h1
 {
     font-size:3.4rem;
