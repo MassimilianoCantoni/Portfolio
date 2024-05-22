@@ -189,6 +189,10 @@ h1
 {
   background-image: url("/images/cantoni.png");
 }
+#card3
+{
+  background-image: url("/images/presentpal.png");
+}
 
 @media screen and (max-width: 600px)
 {
